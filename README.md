@@ -1,7 +1,8 @@
-> searching queries: 
->
-> | BEV       | CURB    | LANE      | TRANSFORMER | SEGMENTATION |
+searching queries: 
+
+> |           |         |           |             |              |
 > | --------- | ------- | --------- | ----------- | ------------ |
+> | BEV       | CURB    | LANE      | TRANSFORMER | SEGMENTATION |
 > | FREESPACE | DRIVING | CAMERA    | LIDAR       | AUTO         |
 > | VIEW      | UNLABEL | REAL-TIME |             |              |
 
@@ -112,48 +113,46 @@
 |                                                              |      |                                      |         |
 # IV
 
-| Name | Year | URL  | Keyword |
-| ---- | ---- | ---- | ------- |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
+> https://ieeexplore.ieee.org/xpl/conhome/1000397/all-proceedings
+
+| Name                                                         | Year | URL                                          | Keyword |
+| ------------------------------------------------------------ | ---- | -------------------------------------------- | ------- |
+| Attention-based Proposals Refinement for 3D Object Detection | 2022 | https://ieeexplore.ieee.org/document/9827019 |         |
+| Robust 3D Object Detection in Cold Weather Conditions        | 2022 | https://ieeexplore.ieee.org/document/9827398 |         |
+| A Multi-Task Recurrent Neural Network for End-to-End Dynamic Occupancy Grid Mapping | 2022 | https://ieeexplore.ieee.org/document/9827360 |         |
+| LaneFusion: 3D Object Detection with Rasterized Lane Map     | 2022 | https://ieeexplore.ieee.org/document/9827025 |         |
+| Enhancement of Target Feature Regions and Intention-Driven Visual Attention Selection in Traffic Scenes | 2022 | https://ieeexplore.ieee.org/document/9827298 |         |
+| DST3D: DLA-Swin Transformer for Single-Stage Monocular 3D Object Detection | 2022 | https://ieeexplore.ieee.org/document/9827462 |         |
+| A convolution-based grid map reconfiguration method for autonomous driving in highly constrained environments | 2022 | https://ieeexplore.ieee.org/document/9827163 |         |
+| Multitask Network for Joint Object Detection, Semantic Segmentation and Human Pose Estimation in Vehicle Occupancy Monitoring | 2022 | https://ieeexplore.ieee.org/document/9827088 |         |
+| Towards Real-time Traffic Sign and Traffic Light Detection on Embedded Systems | 2022 | https://ieeexplore.ieee.org/document/9827355 |         |
+| Self-Supervised Road Layout Parsing with Graph Auto-Encoding | 2022 | https://ieeexplore.ieee.org/document/9827287 |         |
+| Adversarial Attack and Defense of YOLO Detectors in Autonomous Driving Scenarios | 2022 | https://ieeexplore.ieee.org/document/9827222 |         |
+| A Spatio-Temporal Multilayer Perceptron for Gesture Recognition | 2022 | https://ieeexplore.ieee.org/document/9827054 |         |
+| Predicting Future Occupancy Grids in Dynamic Environment with Spatio-Temporal Learning | 2022 | https://ieeexplore.ieee.org/document/9827412 |         |
+| Interaction-Dynamics-Aware Perception Zones for Obstacle Detection Safety Evaluation | 2022 | https://ieeexplore.ieee.org/document/9827409 |         |
+| Fusion Attention Network for Autonomous Cars Semantic Segmentation | 2022 | https://ieeexplore.ieee.org/document/9827377 |         |
+| Occupant Body Imaging based on Occupancy Grid Mapping        | 2021 | https://ieeexplore.ieee.org/document/9575618 |         |
+| Drivable Area Segmentation in Deteriorating Road Regions for Autonomous Vehicles using 3D LiDAR Sensor | 2021 | https://ieeexplore.ieee.org/document/9575552 |         |
+| Temporal Semantics Auto-Encoding based Moving Objects Detection in Urban Driving Scenario | 2021 | https://ieeexplore.ieee.org/document/9575796 |         |
+| Multiple Scale Aggregation with Patch Multiplexing for High-Speed Inter-Vehicle Distance Estimation | 2021 | https://ieeexplore.ieee.org/document/9575418 |         |
+| Temporal Feature Networks for CNN based Object Detection     | 2021 | https://ieeexplore.ieee.org/document/9575941 |         |
 
 # ITSC
 
-| Name | Year | URL  | Keyword |
-| ---- | ---- | ---- | ------- |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
+| Name                                                         | Year | URL                                  | Keyword |
+| ------------------------------------------------------------ | ---- | ------------------------------------ | ------- |
+| ExAgt: Expert-guided Augmentation for Representation Learning of Traffic Scenarios | 2022 | https://arxiv.org/pdf/2207.08609.pdf |         |
+| BEVDetNet: Bird's Eye View LiDAR Point Cloud based Real-time 3D Object Detection for Autonomous Driving | 2021 |                                      |         |
+| BEV-MODNet: Monocular Camera based Bird's Eye View Moving Object Detection for Autonomous Driving | 2021 |                                      |         |
+| Pattern-Aware Data Augmentation for LiDAR 3D Object Detection | 2021 |                                      |         |
 
 # RSS
 
-| Name | Year | URL  | Keyword |
-| ---- | ---- | ---- | ------- |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
-|      |      |      |         |
+| Name                                                         | Year | URL                                                       | Keyword |
+| ------------------------------------------------------------ | ---- | --------------------------------------------------------- | ------- |
+| Real-Time Multi-View 3D Human Pose Estimation using Semantic Feedback to Smart Edge Sensors | 2021 | http://www.roboticsproceedings.org/rss17/p040.pdf         |         |
+| TARE: A Hierarchical Framework for Efficiently Exploring Complex 3D Environments | 2021 | https://frc.ri.cmu.edu/~zhangji/publications/RSS_2021.pdf |         |
 
 # ACC
 

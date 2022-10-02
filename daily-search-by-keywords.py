@@ -19,16 +19,14 @@ from email.header import Header
 
 def get_one_page(url):
     response = requests.get(url)
-    print('reponse from url =',response.status_code)
     while response.status_code == 403:
         time.sleep(500 + random.uniform(0, 500))
         response = requests.get(url)
         print(response.status_code)
-    print('reponse from url =', response.status_code)
+    print(f'reponse from url = {response.status_code}; URL = {url}')
     if response.status_code == 200:
         return response.text
     return None
-
 
 def send_email(receiver, title, content):
 
@@ -61,11 +59,14 @@ def send_email(receiver, title, content):
     smtp.sendmail(sender, receiver, msg.as_string()) #send emails
     smtp.quit()
 
-
 def main(URL="", keywords=[], notinterestedkeywords=[], localdir=""):
-    '''content to be filled: (1) key-words/not-interested-key-words (ignore/keep cases), (2) local directory to save files, 
-        (3) email sender (account/password), (4) email receiver, (5) smtpserver'''
-    
+    '''content to be filled: 
+       (1) key-words/not-interested-key-words (ignore/keep cases),
+       (2) local directory to save files, 
+       (3) email sender (account/password),
+       (4) email receiver,
+       (5) smtpserver
+    '''
     '''Set personalized values'''
     # subjects
     subjects_of_interest = ['cs.CV', 'cs.RO']  # domains to select
@@ -74,11 +75,11 @@ def main(URL="", keywords=[], notinterestedkeywords=[], localdir=""):
     # key words which ignore cases, we recommand to include ' ' around words to avoid unexpected results, 
     # e.g., 'interaction detection' result searched by 'action detection' keywords
     key_words = keywords  
-    Key_words = keywords                           # key words which keep captialization
+    Key_words = [s.capitalize() for s in keywords] # key words which keep captialization
                                                    # keywords to remove papers containing such strings
     not_interested_words = notinterestedkeywords   # any paper title containing such strings are removed, where stings ignore cases
-    Not_interested_words = notinterestedkeywords   # any paper title containing such strings are removed, where strings keep cases
-    
+    Not_interested_words = [s.capitalize() for s in notinterestedkeywords]  
+                                                   # any paper title containing such strings are removed, where strings keep cases
     local_dir=localdir                             # local directory for saving papers/ csv files/ email contenet txt files
     url = URL
     
@@ -184,14 +185,14 @@ def main(URL="", keywords=[], notinterestedkeywords=[], localdir=""):
         content += 'Here is the Research Direction Distribution Report. \n\n'
         for subject_name, times in subject_items:
             content += subject_name + '   ' + str(times) +'\n'
-        
-    title = time.strftime("%Y-%m-%d") + ' you have {} papers'.format(len(selected_papers))
+
+    title = URL.split('?')[0][-4:]
     freport = open(local_dir+title+'.txt', 'w', encoding='utf-8')
     freport.write(content)
     freport.close()
-    print('Content has been saved to text file: %s.txt.'% title)
-    send_email(receiver, title, content)
-    print('Email has been sent to %s.'%receiver)
+    print(f'Content has been saved to text file: {title}.txt.')
+    # send_email(receiver, title, content)
+    # print('Email has been sent to %s.'%receiver)
     
     '''download key_word selected papers'''
     if download_pdf:
@@ -222,12 +223,14 @@ def main(URL="", keywords=[], notinterestedkeywords=[], localdir=""):
                 with open(local_dir+'failed_download_paperlist.txt', 'a') as f:
                     f.write(f"{selected_paper_title}\n")
 
+
 if __name__ == '__main__':
-    for month in (list(range(2209, 2210))):
-        main(URL=f'https://arxiv.org/list/cs.CV/{month}?show=3000',
-             keywords=[],
-             localdir='C:/Users/RogerCao/Desktop/PaperReadingList/paperlist/')
-        main(URL=f'https://arxiv.org/list/cs.RO/{month}?show=3000',
-             keywords=[],
-             localdir='C:/Users/RogerCao/Desktop/PaperReadingList/paperlist/')
-    time.sleep(1)
+    for month in (list(range(2106, 2113)) + list(range(2201, 2210))):
+        main(URL=f'https://arxiv.org/list/cs.CV/{month}?show=2000',
+             keywords=['drivable', 'occupancy', 'BEV', 'freespace', 'multi-view', 'real-time'],
+             # localdir='C:/Users/RogerCao/Desktop/PaperReadingList/paperlist/')
+             localdir='C:/Users/35462/Desktop/论文笔记/PaperReadingList.github/papers/')
+        # main(URL=f'https://arxiv.org/list/cs.RO/{month}?show=2000',
+        #      keywords=['drivable', 'occupancy', 'BEV'],
+        #      # localdir='C:/Users/RogerCao/Desktop/PaperReadingList/paperlist/')
+        #      localdir='C:/Users/35462/Desktop/论文笔记/PaperReadingList.github/papers/')
